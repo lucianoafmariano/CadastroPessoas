@@ -40,5 +40,28 @@ namespace CadastroPessoas.Controllers
 
             else return View(pessoa);
         }
+
+        [HttpGet]
+        public IActionResult AtualizarPessoa(int? id)
+        {
+            if (id != null)
+            {
+                Pessoa pessoa = _contexto.Pessoas.Find(id);
+                return View(pessoa);
+            }
+            else return NotFound();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AtualizarPessoa(int id, Pessoa pessoa)
+        {
+            if(id != null)
+            {
+                _contexto.Update(pessoa);
+                await _contexto.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            else return View(pessoa);
+        }
     }
 }
