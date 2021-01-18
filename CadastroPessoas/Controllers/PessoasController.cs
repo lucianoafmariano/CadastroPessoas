@@ -57,11 +57,42 @@ namespace CadastroPessoas.Controllers
         {
             if(id != null)
             {
-                _contexto.Update(pessoa);
+                if (ModelState.IsValid)
+                {
+                    _contexto.Update(pessoa);
+                    await _contexto.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index));
+                }
+                else
+                {
+                    return View(pessoa);
+                }
+               
+            }
+            else return NotFound();
+        }
+
+        [HttpGet]
+        public IActionResult ExcluirPessoa(int? id)
+        {
+            if (id != null)
+            {
+                Pessoa pessoa = _contexto.Pessoas.Find(id);
+                return View(pessoa);
+            }
+            else return NotFound();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> ExcluirPessoa(int id, Pessoa pessoa)
+        {
+            if (id != null)
+            {
+                _contexto.Remove(pessoa);
                 await _contexto.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            else return View(pessoa);
+            else return NotFound();
         }
     }
 }
