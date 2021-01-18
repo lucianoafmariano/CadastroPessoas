@@ -36,3 +36,4 @@ E:\Projetos\CadastroPessoas\CadastroPessoas\obj\Debug\netcoreapp2.1\CadastroPess
 E:\Projetos\CadastroPessoas\CadastroPessoas\obj\Debug\netcoreapp2.1\Razor\Views\Pessoas\Index.cshtml.g.cs
 E:\Projetos\CadastroPessoas\CadastroPessoas\obj\Debug\netcoreapp2.1\Razor\Views\Pessoas\CriarPessoa.cshtml.g.cs
 E:\Projetos\CadastroPessoas\CadastroPessoas\obj\Debug\netcoreapp2.1\Razor\Views\Pessoas\AtualizarPessoa.cshtml.g.cs
+E:\Projetos\CadastroPessoas\CadastroPessoas\obj\Debug\netcoreapp2.1\Razor\Views\Pessoas\ExcluirPessoa.cshtml.g.cs
